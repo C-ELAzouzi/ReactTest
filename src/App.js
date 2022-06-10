@@ -1,18 +1,16 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import ProductListing from "./containers/ProductListing";
-import Header from "./containers/Header";
+import ProductListing from "./containers/MoviesListing";
 import "./App.css";
-import ProductDetails from "./containers/ProductDetails";
-
+import { useSelector,useDispatch } from "react-redux";
+import MoviesPage from "./containers/MoviesListing";
 function App() {
+
   return (
     <div className="App">
       <Router>
-        <Header />
         <Switch>
-          <Route path="/" exact component={ProductListing} />
-          <Route path="/product/:productId" component={ProductDetails} />
+          <Route path="/" exact component={MoviesPage} />
           <Route>404 Not Found!</Route>
         </Switch>
       </Router>
